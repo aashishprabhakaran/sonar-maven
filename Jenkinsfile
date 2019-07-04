@@ -1,7 +1,7 @@
 node {
     stage('Code Checkout') { // for display purposes
      echo 'Checout Code and clone it inside jenkins workspace.'
-     git 'https://github.com/itrainavengers/maven_apps.git'
+     git 'https://github.com/aashishprabhakaran/sonar-maven.git'
    }
    stage('Build code') {
       echo 'Build the package'
@@ -15,8 +15,8 @@ node {
              //sh 'mvn clean package sonar:sonar' 
              sh ' mvn org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar ' +
              ' -Dsonar.host.url=https://sonarcloud.io ' +
-             ' -Dsonar.organization=itrainavengers '+ 
-             ' -Dsonar.login=c1f3a8036d378aacc1f6e6e2fc6dcd7de2ebae5d '   
+             ' -Dsonar.organization=aashishprabhakaran '+ 
+             ' -Dsonar.login=dad5791c12e16d4b292a942c7782d2f46cd301b1 '   
          //}
       }
    }
